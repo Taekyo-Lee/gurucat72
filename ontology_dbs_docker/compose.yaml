@@ -1,4 +1,4 @@
-name: a2g_ontology
+name: ontology
 
 services:
 
@@ -23,7 +23,7 @@ services:
       - /data/neo4j/ontology/plugins:/plugins
       - /data/neo4j/ontology/logs:/logs
     networks:
-      - a2g_ontology_net
+      - ontology_net
 
 
   # ✅ qdrant
@@ -36,7 +36,7 @@ services:
     volumes:
       - /data/qdrant/ontology/storage:/qdrant/storage
     networks:
-      - a2g_ontology_net
+      - ontology_net
 
 
   # ✅ minio
@@ -63,7 +63,7 @@ services:
       timeout: 20s
       retries: 3
     networks:
-      - a2g_ontology_net
+      - ontology_net
 
 
 
@@ -80,7 +80,7 @@ services:
       environment:
         - ALLOW_EMPTY_PASSWORD=yes
       networks:
-        - a2g_ontology_net
+        - ontology_net
 
 
   # ✅ redis insight
@@ -93,7 +93,7 @@ services:
       volumes:
         - /data/redis_insight/ontology:/data
       networks:
-        - a2g_ontology_net
+        - ontology_net
 
 
 
@@ -101,9 +101,6 @@ services:
 
 
 networks:
-  a2g_ontology_net:
+  ontology_net:
 
 
-# ✅ Developnment 
-# docker compose -f /home/jetlee/workspace/taekyolee/composes/compose_ho.yaml -p taekyo up -d
-# http://localhost:48888?token=pass
