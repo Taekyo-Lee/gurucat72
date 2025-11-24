@@ -156,14 +156,14 @@ git push -u origin <branch-name>
 
 ## Troubleshooting
 
-### Issue: "fatal: refusing to merge unrelated histories"
+### Issue: `fatal: refusing to merge unrelated histories`
 
 **Solution:** Use the `--allow-unrelated-histories` flag:
 ```bash
 git pull origin main --allow-unrelated-histories
 ```
 
-### Issue: "Updates were rejected because the remote contains work that you do not have locally"
+### Issue: `Updates were rejected because the remote contains work that you do not have locally`
 
 **Solution:** Pull the remote changes first:
 ```bash
@@ -180,7 +180,7 @@ git pull origin main --allow-unrelated-histories
 - Use a Personal Access Token (PAT) instead of password
 - Configure SSH keys and use SSH URL: `git@github.com:Taekyo-Lee/gurucat72.git`
 
-### Issue: "fatal: remote origin already exists"
+### Issue: `fatal: remote origin already exists`
 
 **Solution:** Remove the existing remote first:
 ```bash
