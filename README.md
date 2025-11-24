@@ -73,27 +73,20 @@ Once the services are running, access the following GUIs (URLs will vary based o
 ## 🛠️ Service Details
 
 ### 🕸️ Neo4j (Graph Database)
-- **HTTP Port**: 57474
-- **Bolt Port**: 57687
 - **Features**: APOC plugin enabled
 - **Use Case**: Knowledge graph and relationship management
 
 ### 🔍 Qdrant (Vector Database)
-- **Port**: 56333
 - **Use Case**: Vector similarity search and embeddings storage
 
 ### 🪣 MinIO (Object Storage)
-- **API Port**: 59000
-- **Console Port**: 59090
 - **Use Case**: File and object storage (S3-compatible)
 
 ### ⚡ Redis (Cache/Message Broker)
-- **Port**: 56379
 - **Features**: Data persistence enabled (saves every 60s if 1+ keys changed)
 - **Use Case**: Caching and message queuing
 
 ### 📊 Redis Insight (Redis GUI)
-- **Port**: 55540
 - **Use Case**: Redis database visualization and management
 
 ## 💾 Data Persistence
