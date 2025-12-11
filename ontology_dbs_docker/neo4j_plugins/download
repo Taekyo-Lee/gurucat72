@@ -1,0 +1,1 @@
+wget -P neo4j_plugins/ https://graphdatascience.ninja/neo4j-graph-data-science-2.13.7.jar
