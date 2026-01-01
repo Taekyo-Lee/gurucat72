@@ -97,31 +97,18 @@ services:
 
 
 
-  # ✅ redis
-  redis_ontology:
-      image: redis
-      container_name: redis_ontology
+  # ✅ redis stack (includes RedisInsight + modules)
+  redis_stack_ontology:
+      image: redis/redis-stack:latest
+      container_name: redis_stack_ontology
       restart: unless-stopped
       ports:
         - "${ONTOLOGY_REDIS_PORT}:6379"
+        - "${ONTOLOGY_REDIS_INSIGHT_PORT}:8001"
       volumes:
         - redis_data:/data
-      command: ["redis-server", "--save", "60", "1", "--loglevel", "warning", "--requirepass", "${ONTOLOGY_REDIS_PASSWORD}"]
       environment:
-        - REDIS_PASSWORD=${ONTOLOGY_REDIS_PASSWORD}
-      networks:
-        - ontology_net
-
-
-  # ✅ redis insight
-  redis_insight_ontology:
-      image: redislabs/redisinsight:latest
-      container_name: redis_insight_ontology
-      restart: unless-stopped
-      ports:
-        - "${ONTOLOGY_REDIS_INSIGHT_PORT}:5540"
-      volumes:
-        - redis_insight_data:/data
+        - REDIS_ARGS=--save 60 1 --loglevel warning --requirepass ${ONTOLOGY_REDIS_PASSWORD}
       networks:
         - ontology_net
 
@@ -146,4 +133,3 @@ volumes:
   minio_data3:
   minio_data4:
   redis_data:
-  redis_insight_data:
