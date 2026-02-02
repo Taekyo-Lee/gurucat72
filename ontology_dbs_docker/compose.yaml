@@ -58,7 +58,7 @@ services:
 
   # ✅ qdrant
   qdrant_ontology: 
-    image: qdrant/qdrant
+    image: qdrant/qdrant:v1.16.3
     container_name: qdrant_ontology
     restart: unless-stopped
     ports:
