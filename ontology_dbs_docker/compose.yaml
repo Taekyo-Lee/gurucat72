@@ -58,11 +58,13 @@ services:
 
   # ✅ qdrant
   qdrant_ontology: 
-    image: qdrant/qdrant:v1.16.3
+    image: qdrant/qdrant
     container_name: qdrant_ontology
     restart: unless-stopped
     ports:
       - "${ONTOLOGY_QDRANT_PORT}:6333"
+    environment:
+      - QDRANT__SERVICE__API_KEY=${ONTOLOGY_QDRANT_API_KEY}
     volumes:
       - qdrant_storage:/qdrant/storage
     networks:
